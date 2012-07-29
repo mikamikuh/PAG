@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEditor;
-using UnityTableViewer.Accessor;
+using PAG.Accessor;
 
 namespace {{ namespace }} {
 	public class {{ className }}AccessorManager : AccessorManagerBase {

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections;
-using UnityTableViewer.Accessor;
+using PAG.Accessor;
 
 namespace {{ namespace }} {
 	public class {{ className }}DataAccessor : DataAccessorBase {
