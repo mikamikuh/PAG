@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace UnityTableViewer.Accessor {
+namespace PAG.Accessor {
 	public abstract class AccessorManagerBase : IAccessorManager {
 		protected Dictionary<string, IDataAccessor> prefabs;
 		

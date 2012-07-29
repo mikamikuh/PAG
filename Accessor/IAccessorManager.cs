@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace UnityTableViewer.Accessor {
+namespace PAG.Accessor {
 	public interface IAccessorManager {
 		Object Get(string key);
 	}

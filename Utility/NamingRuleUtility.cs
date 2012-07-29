@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace UnityTableViewer.Utility {
+namespace PAG.Utility {
 	public class NamingRuleUtility {
 		
 		public static string CreateAccessorClassName(string prefabName) {

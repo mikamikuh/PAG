@@ -2,10 +2,10 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
-using UnityTableViewer.Utility;
+using PAG.Utility;
 using TemplateEngine;
 
-namespace UnityTableViewer.Generator {
+namespace PAG.Generator {
 	public class DataScriptGenerator : CodeGenerator {
 		
 		private string ns;

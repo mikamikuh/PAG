@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections;
 
-namespace UnityTableViewer.Accessor {
+namespace PAG.Accessor {
 	public abstract class DataAccessorBase : IDataAccessor {
 		protected Object prefab;
 		

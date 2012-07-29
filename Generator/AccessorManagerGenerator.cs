@@ -3,9 +3,9 @@ using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 using TemplateEngine;
-using UnityTableViewer.Utility;
+using PAG.Utility;
 
-namespace UnityTableViewer.Generator {
+namespace PAG.Generator {
 	public class AccessorManagerGenerator : CodeGenerator {
 		
 		private string ns;

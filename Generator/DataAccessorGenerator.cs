@@ -3,10 +3,10 @@ using UnityEditor;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
-using UnityTableViewer.Utility;
+using PAG.Utility;
 using TemplateEngine;
 
-namespace UnityTableViewer.Generator {
+namespace PAG.Generator {
 	public class DataAccessorGenerator : CodeGenerator {
 		
 		string ns;

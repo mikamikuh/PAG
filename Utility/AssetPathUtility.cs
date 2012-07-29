@@ -1,5 +1,5 @@
 
-namespace UnityTableViewer.Utility {
+namespace PAG.Utility {
 	public class AssetPathUtility {
 		public static string TemplateFolderPath = "Assets/UnityTableViewer/Generator/Templates/";
 		public static string AccessorManagerTemplatePath = TemplateFolderPath + "AccessorManager.txt";

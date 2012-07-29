@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections;
 
-namespace UnityTableViewer.Generator {
+namespace PAG.Generator {
 	public abstract class CodeGenerator : ICodeGenerator {
 		public abstract void execute();
 		

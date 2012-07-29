@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 
-public interface ICodeGenerator {
-	void execute();
+namespace PAG.Generator {
+	public interface ICodeGenerator {
+		void execute();
+	}
 }
