@@ -1,16 +1,17 @@
+using System;
 using UnityEngine;
 using UnityEditor;
 using System.Collections;
 
 namespace PAG.Accessor {
 	public abstract class DataAccessorBase : IDataAccessor {
-		protected Object prefab;
+		protected UnityEngine.Object prefab;
 		
 		protected GameObject GetGameObjectFromPrefab(string prefabPath) {
-			Object prefab = (UnityEngine.Object)AssetDatabase.LoadAssetAtPath(prefabPath, typeof(Object));
-			Object[] gameObjects = GameObject.FindObjectsOfTypeIncludingAssets(typeof(GameObject));
+			UnityEngine.Object prefab = (UnityEngine.Object)AssetDatabase.LoadAssetAtPath(prefabPath, typeof(UnityEngine.Object));
+			UnityEngine.Object[] gameObjects = GameObject.FindObjectsOfTypeIncludingAssets(typeof(GameObject));
 
-			foreach(Object obj in gameObjects) {
+			foreach(UnityEngine.Object obj in gameObjects) {
 				if(AssetDatabase.GetAssetPath(obj) == prefabPath && obj.GetType() == typeof(GameObject)) {
 					return (GameObject)obj;
 				}
@@ -19,11 +20,11 @@ namespace PAG.Accessor {
 			return null;
 		}
 		
-		public virtual Object GetValue(string key) {
+		public virtual System.Object GetValue(string key) {
 			return null;
 		}
 		
-		public virtual void SetValue(Object val, string key) {
+		public virtual void SetValue(System.Object val, string key) {
 		}
 	}
 }
