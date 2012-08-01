@@ -6,11 +6,11 @@ using PAG.Accessor;
 namespace {{ namespace }} {
 	public class {{ className }}DataAccessor : DataAccessorBase {
 		
-		private {{ className }} data;
+		private {{ scriptName }} data;
 	
 		public {{ className }}DataAccessor() {
 			GameObject obj = GetGameObjectFromPrefab("{{ prefabPath }}.prefab");
-			data = obj.GetComponent<{{ className }}>();
+			data = obj.GetComponent<{{ scriptName }}>();
 		}
 	
 		public System.Object Get(string key) {

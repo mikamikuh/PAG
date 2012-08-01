@@ -26,7 +26,7 @@ namespace PAG.Generator {
 			string initializeCode = "";
 			
 			foreach(string name in prefabNames) {
-				string line = "			prefabs.Add( new " + NamingRuleUtility.CreateAccessorClassName(name) + "());";
+				string line = "			prefabs[\"" + name + "\"] = new " + NamingRuleUtility.CreateAccessorClassName(name) + "();";
 				initializeCode += line + System.Environment.NewLine;
 			}
 			

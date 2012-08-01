@@ -11,12 +11,14 @@ namespace PAG.Generator {
 		
 		string ns;
 		string className;
+		string scriptName;
 		string prefabPath;
 		IDictionary<string, string> variables;
 		
-		public DataAccessorGenerator(string ns, string className, string prefabPath, IDictionary<string, string> variables) {
+		public DataAccessorGenerator(string ns, string className, string scriptName, string prefabPath, IDictionary<string, string> variables) {
 			this.ns = ns;
 			this.className = className;
+			this.scriptName = scriptName;
 			this.prefabPath = prefabPath;
 			this.variables = variables;
 		}
@@ -24,6 +26,7 @@ namespace PAG.Generator {
 		public override void execute() {
 			Template target = new Template(AssetPathUtility.DataAccessorTemplatePath, false);
 			target.Set("className", className);
+			target.Set("scriptName", scriptName);
 			target.Set("namespace", ns);
 			target.Set("prefabPath", prefabPath);
 			target.Set("getCases", CreateGetCases());
