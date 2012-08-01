@@ -13,5 +13,9 @@ namespace PAG.Accessor {
 		public virtual Object Get(string key) {
 			return null;
 		}
+		
+		public Dictionary<string, IDataAccessor> GetAll() {
+			return prefabs;
+		}
 	}
 }
