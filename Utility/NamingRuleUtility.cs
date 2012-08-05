@@ -17,7 +17,7 @@ namespace PAG.Utility {
 		}
 		
 		public static string CreateDataScriptGeneratePath(string className) {
-			return AssetPathUtility.DataScriptGeneratePath + className + "Script.cs";
+			return AssetPathUtility.DataScriptGeneratePath + className + ".cs";
 		}
 	}
 }

@@ -5,15 +5,13 @@ using PAG.Accessor;
 
 namespace {{ namespace }} {
 	public class {{ className }}DataAccessor : DataAccessorBase {
+		{{ className }} scriptClass;
 		
-		private {{ scriptName }} data;
-	
-		public {{ className }}DataAccessor() {
-			GameObject obj = GetGameObjectFromPrefab("{{ prefabPath }}.prefab");
-			data = obj.GetComponent<{{ scriptName }}>();
+		public {{ className }}DataAccessor(System.Object script) {
+			{{ className }} scriptClass = ({{ className }})script;
 		}
 	
-		public System.Object Get(string key) {
+		public override System.Object GetValue(string key) {
 			switch(key) {
 {{ getCases }}
 				default:
@@ -21,7 +19,7 @@ namespace {{ namespace }} {
 			}
 		}
 		
-		public void Set(System.Object val, string key) {
+		public override void SetValue(System.Object val, string key) {
 			switch(key) {
 {{ setCases }}
 				default:

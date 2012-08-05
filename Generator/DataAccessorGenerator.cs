@@ -12,23 +12,18 @@ namespace PAG.Generator {
 		string ns;
 		string className;
 		string scriptName;
-		string prefabPath;
 		IDictionary<string, string> variables;
 		
-		public DataAccessorGenerator(string ns, string className, string scriptName, string prefabPath, IDictionary<string, string> variables) {
+		public DataAccessorGenerator(string ns, string className, IDictionary<string, string> variables) {
 			this.ns = ns;
 			this.className = className;
-			this.scriptName = scriptName;
-			this.prefabPath = prefabPath;
 			this.variables = variables;
 		}
 		
 		public override void execute() {
 			Template target = new Template(AssetPathUtility.DataAccessorTemplatePath, false);
 			target.Set("className", className);
-			target.Set("scriptName", scriptName);
 			target.Set("namespace", ns);
-			target.Set("prefabPath", prefabPath);
 			target.Set("getCases", CreateGetCases());
 			target.Set("setCases", CreateSetCases());
 			
@@ -41,7 +36,7 @@ namespace PAG.Generator {
 			StringBuilder generateCode = new StringBuilder();
 			
 			foreach(KeyValuePair<string, string> pair in variables) {
-				generateCode.Append("				case \"" + pair.Key + "\": return data." + pair.Key + ";" + System.Environment.NewLine);
+				generateCode.Append("				case \"" + pair.Key + "\": return scriptClass." + pair.Key + ";" + System.Environment.NewLine);
 			}		
 			return generateCode.ToString();
 		}
@@ -50,7 +45,7 @@ namespace PAG.Generator {
 			StringBuilder generateCode = new StringBuilder();
 			
 			foreach(KeyValuePair<string, string> pair in variables) {
-				generateCode.Append("				case \"" + pair.Key + "\": data." + pair.Key + " = (" + pair.Value + ")val; break;" + System.Environment.NewLine);
+				generateCode.Append("				case \"" + pair.Key + "\": scriptClass." + pair.Key + " = (" + pair.Value + ")val; break;" + System.Environment.NewLine);
 			}
 			return generateCode.ToString();
 		}
