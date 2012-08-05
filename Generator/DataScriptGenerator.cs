@@ -12,8 +12,7 @@ namespace PAG.Generator {
 		private string className;
 		private IDictionary<string, string> variables;
 		
-		public DataScriptGenerator(string ns, string className, IDictionary<string, string> variables) {
-			this.ns = ns;
+		public DataScriptGenerator(string className, IDictionary<string, string> variables) {
 			this.className = className;
 			this.variables = variables;
 		}
@@ -21,7 +20,6 @@ namespace PAG.Generator {
 		public override void execute() {
 			Template target = new Template(AssetPathUtility.DataScriptTemplatePath, false);
 			target.Set("className", className);
-			target.Set ("ns", ns);
 			
 			string variableCode = "";
 			

@@ -1,8 +1,6 @@
 using UnityEngine;
 
-namespace {{ ns }} {
-	public class {{ className }} : MonoBehaviour {
+public class {{ className }} : MonoBehaviour {
 		
 {{ variables }}
-	}
 }
