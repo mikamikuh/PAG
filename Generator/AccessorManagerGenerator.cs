@@ -10,12 +10,12 @@ namespace PAG.Generator {
 		
 		private string ns;
 		private string className;
-		private IList<string> prefabNames;
+		private IList<string> dataClassNames;
 		
-		public AccessorManagerGenerator(string ns, string className, IList<string> prefabNames) {
+		public AccessorManagerGenerator(string ns, string className, IList<string> dataClassNames) {
 			this.ns = ns;
 			this.className = className;
-			this.prefabNames = prefabNames;
+			this.dataClassNames = dataClassNames;
 		}
 		
 		public override void execute() {
@@ -23,14 +23,16 @@ namespace PAG.Generator {
 			target.Set("className", className);
 			target.Set("namespace", ns);
 			
-			string initializeCode = "";
+			string createCode = "";
 			
-			foreach(string name in prefabNames) {
-				string line = "			prefabs[\"" + name + "\"] = new " + NamingRuleUtility.CreateAccessorClassName(name) + "();";
-				initializeCode += line + System.Environment.NewLine;
+			foreach(string name in dataClassNames) {
+				createCode += "			obj = prefab.GetComponent<" + name + ">();";
+				createCode += System.Environment.NewLine;
+				createCode += "			if(obj != null) return new " + name + "DataAccessor(obj);";
+				createCode += System.Environment.NewLine;
 			}
 			
-			target.Set("initializeCode", initializeCode);
+			target.Set("createCode", createCode);
 			
 			string folderPath = AssetPathUtility.AccessorManagerGeneratePath;
 			string generatePath = NamingRuleUtility.CreateAccessorManagerGeneratePath(className);

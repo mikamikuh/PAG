@@ -1,11 +1,14 @@
+using System;
 using UnityEngine;
 using UnityEditor;
 using PAG.Accessor;
 
 namespace {{ namespace }} {
-	public class {{ className }}AccessorManager : AccessorManagerBase {
-		public {{ className }}AccessorManager() {
-{{ initializeCode }}
+	public class {{ className }}AccessorManager : AccessorManagerBase {	
+		public IDataAccessor GetDataAccessor(GameObject prefab) {
+			Component obj;
+{{ createCode }}
+			return null;
 		}
 	}
 }
