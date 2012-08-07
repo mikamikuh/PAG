@@ -11,7 +11,10 @@ namespace PAG.Generator {
 				System.IO.Directory.CreateDirectory(folderPath);
 			}
 			
-			System.IO.File.WriteAllText(generatePath, snippet);
+			System.IO.StreamWriter sw = new System.IO.StreamWriter(generatePath, false);
+			sw.Write(snippet);
+			sw.Close();
+			
 			AssetDatabase.Refresh();
 		}
 	}
