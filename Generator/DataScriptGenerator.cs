@@ -10,16 +10,19 @@ namespace PAG.Generator {
 		
 		private string ns;
 		private string className;
+		private string superClassName;
 		private IDictionary<string, string> variables;
 		
-		public DataScriptGenerator(string className, IDictionary<string, string> variables) {
+		public DataScriptGenerator(string className, string superClassName, IDictionary<string, string> variables) {
 			this.className = className;
+			this.superClassName = superClassName;
 			this.variables = variables;
 		}
 		
 		public override void execute() {
 			Template target = new Template(AssetPathUtility.DataScriptTemplatePath, false);
 			target.Set("className", className);
+			target.Set ("superClass", superClassName);
 			
 			string variableCode = "";
 			

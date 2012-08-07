@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class {{ className }} : MonoBehaviour {
+public class {{ className }} : {{ superClass }} {
 		
 {{ variables }}
 }
