@@ -10,6 +10,10 @@ namespace PAG.Accessor {
 			prefabs = new Dictionary<string, IDataAccessor>();
 		}
 		
+		public virtual IDataAccessor GetDataAccessor(GameObject prefab) {
+			return null;
+		}
+		
 		public virtual Object Get(string key) {
 			return null;
 		}

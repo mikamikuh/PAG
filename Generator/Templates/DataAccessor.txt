@@ -8,7 +8,7 @@ namespace {{ namespace }} {
 		{{ className }} scriptClass;
 		
 		public {{ className }}DataAccessor(System.Object script) {
-			{{ className }} scriptClass = ({{ className }})script;
+			this.scriptClass = ({{ className }})script;
 		}
 	
 		public override System.Object GetValue(string key) {

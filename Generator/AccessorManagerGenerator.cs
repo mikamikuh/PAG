@@ -26,9 +26,9 @@ namespace PAG.Generator {
 			string createCode = "";
 			
 			foreach(string name in dataClassNames) {
-				createCode += "			obj = prefab.GetComponent<" + name + ">();";
+				createCode += "		obj = prefab.GetComponent<" + name + ">();";
 				createCode += System.Environment.NewLine;
-				createCode += "			if(obj != null) return new " + name + "DataAccessor(obj);";
+				createCode += "		if(obj != null) return new " + name + "DataAccessor(obj);";
 				createCode += System.Environment.NewLine;
 			}
 			
