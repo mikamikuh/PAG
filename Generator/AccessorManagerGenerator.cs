@@ -8,12 +8,10 @@ using PAG.Utility;
 namespace PAG.Generator {
 	public class AccessorManagerGenerator : CodeGenerator {
 		
-		private string ns;
 		private string className;
 		private IList<string> dataClassNames;
 		
-		public AccessorManagerGenerator(string ns, string className, IList<string> dataClassNames) {
-			this.ns = ns;
+		public AccessorManagerGenerator(string className, IList<string> dataClassNames) {
 			this.className = className;
 			this.dataClassNames = dataClassNames;
 		}
@@ -21,7 +19,6 @@ namespace PAG.Generator {
 		public override void execute() {
 			Template target = new Template(AssetPathUtility.AccessorManagerTemplatePath, false);
 			target.Set("className", className);
-			target.Set("namespace", ns);
 			
 			string createCode = "";
 			
