@@ -1,7 +1,7 @@
 
 namespace PAG.Utility {
 	public class AssetPathUtility {
-		public static string TemplateFolderPath = "Assets/PAG/Generator/Templates/";
+		public static string TemplateFolderPath = "Assets/SimpleData/PAG/Generator/Templates/";
 		public static string AccessorManagerTemplatePath = TemplateFolderPath + "AccessorManager.txt";
 		public static string DataAccessorTemplatePath = TemplateFolderPath + "DataAccessor.txt";
 		public static string DataScriptTemplatePath = TemplateFolderPath + "DataScript.txt";
