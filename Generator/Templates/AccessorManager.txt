@@ -5,7 +5,7 @@ using PAG.Accessor;
 using Test.Generate;
 
 public class {{ className }}AccessorManager : AccessorManagerBase {	
-	public IDataAccessor GetDataAccessor(GameObject prefab) {
+	public override IDataAccessor GetDataAccessor(GameObject prefab) {
 		Component obj;
 {{ createCode }}
 		return null;
